@@ -65,3 +65,6 @@ replay.addEventListener('click', function () {
 window.onload = function() {
   document.querySelector('.highscore').innerHTML = window.localStorage.getItem('highscoreNumber');
 }  
+
+// Clear localstorage
+// localStorage.clear();
