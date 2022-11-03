@@ -20,3 +20,15 @@ let myCurrentJob = "Programmer";
 // insted of this
 let job1 = "Marketing Coordinator";
 let job2 = "Programmer";
+
+// boolean
+true;
+console.log(true); // returns true
+
+// undefined
+let year;
+console.log("year", year); // value = undefined value
+console.log(typeof year); // type = undefined
+
+// null
+console.log(typeof null) // returns object, but it should be also null. It is bug/error of JS
