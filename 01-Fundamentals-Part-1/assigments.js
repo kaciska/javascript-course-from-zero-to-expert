@@ -102,7 +102,7 @@ const weightJohn = 85;
 const bmiMark =  (weightMark / heightMark ** 2).toFixed(1);
 console.log("BMI Mark", bmiMark);
 
-const bmiJohn =  (weightJohn / heightJohn ** 2).toFixed(1);
+const bmiJohn =  (weightJohn / heightJohn ** 2).toFixed(1); //toFixed converts number to string, rounded
 console.log("BMI John", bmiJohn);
 
 const markHigherBMI = bmiMark > bmiJohn;
@@ -124,4 +124,45 @@ if (bmiMark > bmiJohn) {
     console.log(`Mark's BMI ${bmiMark} is higher than John's ${bmiJohn}!`)
 } else {
     console.log(`John's BMI ${bmiJohn} is higher than Mark's ${bmiMark}!`)
+}
+
+/*
+Coding Challenge #3
+There are two gymnastics teams, Dolphins and Koalas. They compete against each
+other 3 times. The winner with the highest average score wins a trophy!
+Your tasks:
+1. Calculate the average score for each team, using the test data below
+2. Compare the team's average scores to determine the winner of the competition,
+and print it to the console. Don't forget that there can be a draw, so test for that
+as well (draw means they have the same average score)
+3. Bonus 1: Include a requirement for a minimum score of 100. With this rule, a
+team only wins if it has a higher score than the other team, and the same time a
+score of at least 100 points. Hint: Use a logical operator to test for minimum
+score, as well as multiple else-if blocks 😉
+4. Bonus 2: Minimum score also applies to a draw! So a draw only happens when
+both teams have the same score and both have a score greater or equal 100
+points. Otherwise, no team wins the trophy
+Test data:
+§ Data 1: Dolphins score 96, 108 and 89. Koalas score 88, 91 and 110
+§ Data Bonus 1: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 123
+§ Data Bonus 2: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 106
+*/
+
+const dolphinsAverageScore = Math.round(97 + 112 + 101 / 3);
+const koalasAverageScore = Math.round(109 + 95 + 106 / 3);
+
+console.log("Dolphins average score:", dolphinsAverageScore);
+console.log("Koalas average score:", koalasAverageScore)
+
+if (dolphinsAverageScore > koalasAverageScore && dolphinsAverageScore >= 100) {
+    console.log(`Doplhins win with the average score ${dolphinsAverageScore}`)
+
+} else if (dolphinsAverageScore < koalasAverageScore && dolphinsAverageScore >= 100) {
+    console.log(`Koalas win with the average score ${koalasAverageScore}"`)
+
+} else if (dolphinsAverageScore === koalasAverageScore && dolphinsAverageScore >= 100) { // musí mít stejný výsledek, takže stačí dát podmínku 100 bodů jen jednomu týmu
+    console.log("They have same score above 100 points, nobody win.")
+
+} else {
+    console.log("Nobody has minimum of 100 points.")
 }
