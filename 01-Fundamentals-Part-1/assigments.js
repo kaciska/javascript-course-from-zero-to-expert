@@ -148,8 +148,8 @@ Test data:
 § Data Bonus 2: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 106
 */
 
-const dolphinsAverageScore = Math.round(97 + 112 + 101 / 3);
-const koalasAverageScore = Math.round(109 + 95 + 106 / 3);
+const dolphinsAverageScore = Math.round((97 + 112 + 101) / 3);
+const koalasAverageScore = Math.round((109 + 95 + 106) / 3);
 
 console.log("Dolphins average score:", dolphinsAverageScore);
 console.log("Koalas average score:", koalasAverageScore)
