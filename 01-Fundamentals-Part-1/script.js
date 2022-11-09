@@ -32,3 +32,55 @@ console.log(typeof year); // type = undefined
 
 // null
 console.log(typeof null) // returns object, but it should be also null. It is bug/error of JS
+
+
+// FUNCTIONS
+
+function fruitProcessor(apples, oranges) {
+    const juice = `Juice with ${apples} apples and ${oranges}.`
+    console.log(juice) // tady to vrátí rovnou do konzole už při volání funkce
+    return juice;    
+}
+
+fruitProcessor(5,0)
+console.log(fruitProcessor(5,0));
+
+
+// Function declaration - with function keyword
+// can be called before initialization
+function calcAge1(birthYear) {
+    return 2022 - birthYear;
+}
+
+const age1 = calcAge1(1988);
+console.log(age1);
+
+
+// Function expression (anonymous function)
+// cannot be called before initialization
+const calcAge2 = function (birthYear) {
+    return 2022 - birthYear;
+}
+
+const age2 = calcAge2(1988);
+console.log(age2);
+
+
+// Arrow function - one line code
+const calcAge3 = birthYear => 2037 - birthYear;
+const age3 = calcAge3(1988);
+console.log(age3);
+
+// Arrow function - more line code
+const yearsUntilRetirement = birthYear => {
+    const age = 2037 - birthYear;
+    const retirement = 65 - age;
+    return retirement;
+};
+
+// Arrow function - more parametres
+const yearsUntilRetirement2 = (birthYear, firstName) => {
+    const age = 2037 - birthYear;
+    const retirement = 65 - age;
+    return `${firstName} retires in ${retirement} years.`;
+};
