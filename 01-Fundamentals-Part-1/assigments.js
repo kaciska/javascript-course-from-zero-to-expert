@@ -7,6 +7,7 @@ assign their values according to your own country (population in millions)
 2. Log their values to the console
 */
 
+/*
 const country = "Czech republic";
 const continent = "Europe";
 let population = 10;
@@ -21,7 +22,7 @@ country. The variable should hold a Boolean value. Also declare a variable
 2. Log the types of 'isIsland', 'population', 'country' and 'language'
 to the console
 */
-
+/*
 const isIsland = false;
 //const language; it cannot be empty, if it is const
 const language = "Czech";
@@ -56,6 +57,7 @@ which contains a string with this format: 'Portugal is in Europe, and its 11 mil
 people speak portuguese'
 */
 
+/*
 let halfCountryPopulation = population / 2;
 console.log("Half population of Czech republic is", halfCountryPopulation, "millions.")
 
@@ -79,21 +81,27 @@ minus the country's population)
 130. See the different results, and set the population back to original
 */
 
+/*
 if (population > 33) {
     console.log("Czech's population is above average");
     } else {
         console.log(`Czech's population is ${33 - population} millions below average.`)
     }
+*/
 
 /*
 LECTURE: Type Conversion and Coercion
-1. Predict the result of these 5 operations without executing them:*/
+1. Predict the result of these 5 operations without executing them:
+// 2. Execute the operations to check if you were right */
+
+/*
 '9' - '5'; // 4 (number)
 '19' - '13' + '17'; // "617" (string)
 '19' - '13' + 17; // 23 (number)
 '123' < 57; // false
 5 + 6 + '4' + 9 - 4 - 2; // 1143 (number)
-// 2. Execute the operations to check if you were right
+
+
 
 
 /*
@@ -144,11 +152,12 @@ change some variables in order to make the condition true (unless you live in
 Canada :D)
 */
 
+/*
 if (language === "English" && population < 50 && !isIsland) {
     console.log(`You should live in ${country}.`)
 } else {
     console.log(`${country} does not meet your criteria.`)
-}
+}*/
 
 
 /*
@@ -162,6 +171,7 @@ arabic: '5th most spoken language'
 for all other simply log 'Great language too :D'
 */
 
+/*
 switch(language) {
     case "chinese":
     case "mandarin":
@@ -181,7 +191,7 @@ switch(language) {
         break;
     default:
         console.log("Great language too :D");
-}
+}*/
 
 /*
 LECTURE: The Conditional (Ternary) Operator
@@ -193,9 +203,10 @@ one word changes between these two sentences!
 130. See the different results, and set the population back to original
 */
 
+/*
 population > 33 ? console.log("Czech's population is above average.") : console.log("Czech's population is below average.")
 console.log(`${country}'s population is ${population > 33 ? "above" : "below"} average.`)
-
+*/
 
 
 /*Coding Challenge #1
@@ -222,7 +233,7 @@ const heightJohn = 1.95;
 const weightJohn = 92;*/
 
 // const used because I already know that I'm not going to change it here
-const heightMark = 1.88;
+/*const heightMark = 1.88;
 const weightMark = 95;
 const heightJohn = 1.76;
 const weightJohn = 85;
@@ -235,7 +246,7 @@ console.log("BMI John", bmiJohn);
 
 const markHigherBMI = bmiMark > bmiJohn;
 console.log("The statement, that Mark's BMI is higher than John's, is", markHigherBMI);
-
+*/
 
 /*
 Coding Challenge #2
@@ -248,11 +259,12 @@ is either "Mark's BMI is higher than John's!" or "John's BMI is higher than Mark
 BMI (28.3) is higher than John's (23.9)!"
  */
 
+/*
 if (bmiMark > bmiJohn) {
     console.log(`Mark's BMI ${bmiMark} is higher than John's ${bmiJohn}!`)
 } else {
     console.log(`John's BMI ${bmiJohn} is higher than Mark's ${bmiMark}!`)
-}
+}*/
 
 /*
 Coding Challenge #3
@@ -276,7 +288,7 @@ Test data:
 § Data Bonus 2: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 106
 */
 
-const dolphinsAverageScore = Math.round((97 + 112 + 101) / 3);
+/*const dolphinsAverageScore = Math.round((97 + 112 + 101) / 3);
 const koalasAverageScore = Math.round((109 + 95 + 106) / 3);
 
 console.log("Dolphins average score:", dolphinsAverageScore);
@@ -293,7 +305,7 @@ if (dolphinsAverageScore > koalasAverageScore && dolphinsAverageScore >= 100) {
 
 } else {
     console.log("Nobody has minimum of 100 points.")
-}
+}*/
 
 
 /*
@@ -314,10 +326,115 @@ Test data:
 Data 1: Test for bill values 275, 40 and 430
 */
 
+/*
 const bill = 275;
 
 const tip = bill >= 50 && bill <= 300 ? 0.15 * bill : 0.2 * bill;
 
 const totalValue = bill + tip;
 
-console.log(`The bill is ${bill}, the tip is ${tip} and total value is ${totalValue}.`)
+console.log(`The bill is ${bill}, the tip is ${tip} and total value is ${totalValue}.`) */
+
+
+// JavaScript Fundamentals – Part 2
+// Note: Please start Part 2 from scratch and comment out all the code from Part 1.
+
+/*
+LECTURE: Functions
+1. Write a function called 'describeCountry' which takes three parameters:
+'country', 'population' and 'capitalCity'. Based on this input, the
+function returns a string with this format: 'Finland has 6 million people and its
+capital city is Helsinki'
+2. Call this function 3 times, with input data for 3 different countries. Store the
+returned values in 3 different variables, and log them to the console
+*/
+
+function describeCountry(country, population, capitalCity) {
+    const countryDescription = `${country} has ${population} million people and its capital city is ${capitalCity}.`;
+    return countryDescription;      
+}
+
+const czechia = describeCountry("Czech republic", 10, "Praha");
+const bosna = describeCountry("Bosna and Herzegovina", 3, "Sarajevo");
+const slovakia = describeCountry("Slovakia", 5, "Bratislava");
+
+console.log(czechia, bosna, slovakia);
+
+/*
+LECTURE: Function Declarations vs. Expressions
+1. The world population is 7900 million people. Create a function declaration
+called 'percentageOfWorld1' which receives a 'population' value, and
+returns the percentage of the world population that the given population
+represents. For example, China has 1441 million people, so it's about 18.2% of
+the world population
+2. To calculate the percentage, divide the given 'population' value by 7900
+and then multiply by 100
+3. Call 'percentageOfWorld1' for 3 populations of countries of your choice,
+store the results into variables, and log them to the console
+4. Create a function expression which does the exact same thing, called
+'percentageOfWorld2', and also call it with 3 country populations (can be
+the same populations)
+*/
+
+function percentageOfWorld1(population) {
+    return population / 7900 * 100;
+}
+
+const czechPercentage = percentageOfWorld1(10);
+console.log(czechPercentage);
+
+const bosnaPercentage = percentageOfWorld1(3);
+console.log(bosnaPercentage);
+
+const slovakiaPercentage = percentageOfWorld1(5);
+console.log(slovakiaPercentage);
+
+
+// function expression
+const percentageOfWorld2 = function (population) {
+    return population / 7900 * 100;
+}
+
+console.log(percentageOfWorld2(10));
+
+console.log(percentageOfWorld2(3));
+
+console.log(percentageOfWorld2(5));
+
+
+/*
+LECTURE: Arrow Functions
+1. Recreate the last assignment, but this time create an arrow function called
+'percentageOfWorld3'
+*/
+
+const percentageOfWorld3 = population => population / 7900 * 100; // one line code
+
+/*const percentageOfWorld3 = (population) => { // more lines of code
+    return population / 7900 * 100;
+}*/
+
+
+console.log(percentageOfWorld3(10));
+console.log(percentageOfWorld3(3));
+console.log(percentageOfWorld3(5));
+
+
+/*
+LECTURE: Functions Calling Other Functions
+1. Create a function called 'describePopulation'. Use the function type you
+like the most. This function takes in two arguments: 'country' and
+'population', and returns a string like this: 'China has 1441 million people,
+which is about 18.2% of the world.'
+2. To calculate the percentage, 'describePopulation' call the
+'percentageOfWorld1' you created earlier
+3. Call 'describePopulation' with data for 3 countries of your choice
+*/
+
+const describePopulation = function (country, population) {
+    return `${country} has ${population} million people, which is about ${percentageOfWorld1(population)} % of the world.`
+}
+
+console.log(describePopulation("Poland", 38));
+console.log(describePopulation("Ukraine", 44));
+console.log(describePopulation("USA", 332));
