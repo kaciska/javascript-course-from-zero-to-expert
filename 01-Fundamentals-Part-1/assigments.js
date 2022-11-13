@@ -531,3 +531,42 @@ console.log("Tips are:", tips)
 
 const total = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]]
 console.log("Totals are:", total)
+
+
+// Object challenge from lecture 43
+// Write: Jonas has 3 friend, his best friend's name is Michael (3 variables -> name, number of friends and best friend name)
+
+const jonas = {
+    firstName: "Jonas",
+    lastName: "Schmedtmann",
+    age: 2037 - 1991,
+    job: "teacher",
+    friends: ["Michael", "Tom", "Bob"]
+}
+
+console.log(`${jonas.firstName} has ${jonas.friends.length} friends, his best friend's name is ${jonas.friends[0]}.`)
+
+
+// Object challenge from lecture 44
+// Write: Jonas is 46-years old teacher and he has a driver license.
+
+const jonas2 = {
+    firstName: "Jonas",
+    lastName: "Schmedtmann",
+    birthYear: 1991,
+    job: "teacher",
+    friends: ["Michael", "Tom", "Bob"],
+    hasDriverLicense: true,
+    calcAge: function () {
+        this.age = 2037 - this.birthYear;
+        return this.age;
+    },
+    getSummary: function () {
+        return `${this.firstName} is ${this.calcAge()} years old ${this.job} and he ${(this.hasDriverLicense ? "has driver license." : "has not driver license")}`
+    }
+    
+}
+
+jonas2.calcAge();
+
+console.log(jonas2.getSummary())
