@@ -441,6 +441,58 @@ console.log(describePopulation("USA", 332));
 
 
 /*
+LECTURE: Introduction to Arrays
+1. Create an array containing 4 population values of 4 countries of your choice.
+You may use the values you have been using previously. Store this array into a
+variable called 'populations'
+2. Log to the console whether the array has 4 elements or not (true or false)
+3. Create an array called 'percentages' containing the percentages of the
+world population for these 4 population values. Use the function
+'percentageOfWorld1' that you created earlier to compute the 4
+percentage values
+*/
+
+const populations = [38, 44, 332, 10];
+
+console.log("Population length equals 4:", populations.length === 4 ? true : false);
+
+const percentages = [percentageOfWorld1(populations[0]), percentageOfWorld1(populations[1]), percentageOfWorld1(populations[2]), percentageOfWorld1(populations[3])]
+console.log("Populations percentages are", percentages)
+
+
+/*
+LECTURE: Basic Array Operations (Methods)
+1. Create an array containing all the neighbouring countries of a country of your
+choice. Choose a country which has at least 2 or 3 neighbours. Store the array
+into a variable called 'neighbours'
+2. At some point, a new country called 'Utopia' is created in the neighbourhood of
+your selected country. So add it to the end of the 'neighbours' array
+3. Unfortunately, after some time, the new country is dissolved. So remove it from
+the end of the array
+4. If the 'neighbours' array does not include the country ‘Germany’, log to the
+console: 'Probably not a central European country :D'
+5. Change the name of one of your neighbouring countries. To do that, find the
+index of the country in the 'neighbours' array, and then use that index to
+change the array at that index position. For example, you can search for
+'Sweden' in the array, and then replace it with 'Republic of Sweden'.
+*/
+
+const neighboroughs = ["Slovakia", "Poland", "Austria", "Germany"];
+
+neighboroughs.push("Utopia");
+console.log(neighboroughs);
+
+neighboroughs.pop();
+console.log(neighboroughs)
+
+neighboroughs.includes("Germany") ? console.log("Central European country") : console.log("Probably not a central European country :D");
+
+console.log("Austria index", neighboroughs.indexOf("Austria"));
+neighboroughs[2] = "Ukraine";
+
+console.log(neighboroughs[2])
+
+/*
 Coding Challenge #1
 Back to the two gymnastics teams, the Dolphins and the Koalas! There is a new
 gymnastics discipline, which works differently.
@@ -570,3 +622,47 @@ const jonas2 = {
 jonas2.calcAge();
 
 console.log(jonas2.getSummary())
+
+
+/*
+Coding Challenge #3
+Let's go back to Mark and John comparing their BMIs! This time, let's use objects to
+implement the calculations! Remember: BMI = mass / height ** 2 = mass
+/ (height * height) (mass in kg and height in meter)
+Your tasks:
+1. For each of them, create an object with properties for their full name, mass, and
+height (Mark Miller and John Smith)
+2. Create a 'calcBMI' method on each object to calculate the BMI (the same
+method on both objects). Store the BMI value to a property, and also return it
+from the method
+3. Log to the console who has the higher BMI, together with the full name and the
+respective BMI. Example: "John's BMI (28.3) is higher than Mark's (23.9)!"
+Test data: Marks weights 78 kg and is 1.69 m tall. John weights 92 kg and is 1.95 m
+tall.
+GOOD LUCK 😀
+*/
+
+const mark = {
+    firstName: "Mark",
+    lastName: "Miller",
+    mass: 78,
+    height: 1.69,
+    calcBMI: function () {
+        this.bmi = this.mass / this.height ** 2;
+        return this.bmi;
+    }
+}
+
+const john = {
+    firstName: "John",
+    lastName: "Smith",
+    mass: 92,
+    height: 1.95,
+    calcBMI: function () {
+        this.bmi = this.mass / this.height ** 2;
+        return this.bmi;
+    }
+}
+
+
+console.log(`${john.firstName} ${john.lastName}'s BMI ${john.calcBMI()} is ${(john.calcBMI() > mark.calcBMI() ? "higher" : "less")} than ${mark.firstName} ${mark.lastName} ${mark.calcBMI()}`)
