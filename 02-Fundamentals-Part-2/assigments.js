@@ -219,6 +219,129 @@ myCountry2.describe();
 console.log(myCountry2.checkIsland());
 
 
+// Exercises from lecture 47
+const jonasArray = [
+    "Jonas",
+    "Schmedtmann",
+    2037 - 1991,
+    "teacher",
+    ["Michael", "Peter", "Steven"]
+]
+
+const types = [];
+
+for (let i = 0; i < jonasArray.length; i++) {
+    // reading from jonas array
+    console.log(jonasArray[i]);   
+
+    // fill types array
+    //types[i] = typeof jonasArray[i]    
+
+    // use push method
+    types.push(typeof jonasArray[i]) // push add elements to the end, so we dont need to add [i] position
+}
+
+console.log("typeArray", types)
+
+
+const yearsArray = [1991, 2007, 1969, 2020];
+const agesArray = [];
+
+for (let i = 0; i < yearsArray.length; i++) {
+    agesArray.push(2037 - yearsArray[i]);
+}
+
+console.log("agesArray", agesArray);
+
+// continue & break
+
+for (let i = 0; i < jonasArray.length; i++) {        
+    if(typeof jonasArray[i] !== "string") continue; // pokud není string ukončí danou iteraci a jde na další
+    console.log(jonasArray[i], typeof jonasArray[i]);
+}
+
+for (let i = 0; i < jonasArray.length; i++) {        
+    if(typeof jonasArray[i] === "number") break; // jakmile najde number, ukončí úplně celou iteraci
+    console.log(jonasArray[i], typeof jonasArray[i]);
+}
+
+// Looping backwards - lecture 48
+for (let i = jonasArray.length - 1; i >= 0; i--) { 
+    console.log("jonasArray backwards",i, jonasArray[i]);
+}
+
+// Loops in loops - lecture 48
+// Každý cvik zopakovat 5x
+
+const exercises = ["Plank", "Bench", "Squat"];
+let exercisesRepeats = [];
+
+for (let i = 0; i < exercises.length; i++) {
+    for (let x = 1; x <= 5; x++) {
+        exercisesRepeats.push(exercises[i])[x]        
+    }   
+}
+console.log(exercisesRepeats)
+
+/*
+LECTURE: Iteration: The for Loop
+1. There are elections in your country! In a small town, there are only 50 voters.
+Use a for loop to simulate the 50 people voting, by logging a string like this to
+the console (for numbers 1 to 50): 'Voter number 1 is currently voting'
+*/
+
+for (let i = 1; i <= 50; i++) {
+    console.log(`Voter number ${i} is currently voting.`)
+}
+
+/*
+LECTURE: Looping Arrays, Breaking and Continuing
+1. Let's bring back the 'populations' array from a previous assignment
+2. Use a for loop to compute an array called 'percentages2' containing the
+percentages of the world population for the 4 population values. Use the
+function 'percentageOfWorld1' that you created earlier
+3. Confirm that 'percentages2' contains exactly the same values as the
+'percentages' array that we created manually in the previous assignment,
+and reflect on how much better this solution is
+*/
+
+/* const populations = [38, 44, 332, 10];
+ function percentageOfWorld1(population) {
+    return population / 7900 * 100;
+}*/
+
+const percentages2 = [];
+
+for (let i = 0; i <= populations.length - 1; i++) {
+    percentages2.push(percentageOfWorld1(populations[i]));   
+}
+console.log(percentages2)
+
+
+/*
+LECTURE: Looping Backwards and Loops in Loops
+1. Store this array of arrays into a variable called 'listOfNeighbours'
+[['Canada', 'Mexico'], ['Spain'], ['Norway', 'Sweden',
+'Russia']];
+2. Log only the neighbouring countries to the console, one by one, not the entire
+arrays. Log a string like 'Neighbour: Canada' for each country
+3. You will need a loop inside a loop for this. This is actually a bit tricky, so don't
+worry if it's too difficult for you! But you can still try to figure this out anyway 😉
+*/
+
+const listOfNeighbours = [
+    ['Canada', 'Mexico'], 
+    ['Spain'], 
+    ['Norway', 'Sweden','Russia']
+]
+
+for (let i = 0; i <= listOfNeighbours.length - 1; i++) { // length of this array minus 1 = 2 (tedy 3 další pole)
+    for (let x = 0; x <= listOfNeighbours[i].length - 1; x++) { // v dalším loopu omezíme x na délku každýho z těch 3 polí
+        console.log(`Neighbour: ${listOfNeighbours[i][x]}`) // tady voláme pomocí [i např. první pole ['Canada', 'Mexico'], a díky [x] zavoláme položku 0, což je Canada a pak položku 1, což je Mexico
+    }    
+}
+
+
 
 /*
 Coding Challenge #1
