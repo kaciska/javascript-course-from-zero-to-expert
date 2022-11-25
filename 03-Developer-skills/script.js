@@ -54,7 +54,7 @@ const kelvinTemperature = function () {
     unit: 'Celsius',
     // C) convert the value to number
     //value: Number(prompt('Enter a temperature in Celsius:')),
-    value: 10
+    value: 10,
   };
 
   // B) FIND a BUG -> prompt always make a string from value -> we need to convert it
@@ -70,7 +70,6 @@ const kelvinTemperature = function () {
 // A) IDENTIFY the BUG
 const kelvinTemp = kelvinTemperature();
 console.log(kelvinTemp);
-
 
 /*Coding Challenge #1
 Given an array of forecasted maximum temperatures, the thermometer displays a
@@ -88,12 +87,13 @@ Test data:
 const forecast = [12, 5, -5, 0, 4];
 
 const printForecast = function (arr) {
-  let string = "";
+  let string = '';
 
   for (let i = 0; i < arr.length; i++) {
-    string += `${arr[i]}ºC in ${i+1} days ... `    
-  }  
-  return `... ${string}`;  
-}
+    string += `${arr[i]}ºC in ${i + 1} days ... `;
+  }
+  return `... ${string}`;
+};
 
 console.log(printForecast(forecast));
+sdfsdf;
